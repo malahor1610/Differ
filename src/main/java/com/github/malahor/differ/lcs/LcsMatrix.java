@@ -1,11 +1,10 @@
 package com.github.malahor.differ.lcs;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor

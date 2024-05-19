@@ -8,8 +8,7 @@ import org.springframework.shell.command.annotation.EnableCommand;
 @EnableCommand(DifferCommand.class)
 public class DifferApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DifferApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(DifferApplication.class, args);
+  }
 }
