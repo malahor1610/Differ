@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class LcsMatrixVisitor {
 
-  public int lcsIndex;
   public int row;
   public int column;
 
@@ -24,12 +23,10 @@ public class LcsMatrixVisitor {
   public void moveBack() {
     moveToPreviousRow();
     moveToPreviousColumn();
-    previousCharacter();
   }
 
-  public void moveBackToHigherValue(int[][] matrix) {
-    if (matrix[row - 1][column] > matrix[row][column - 1]) moveToPreviousRow();
-    else moveToPreviousColumn();
+  public boolean isRowValueHigherThanColumn(int[][] matrix) {
+    return matrix[row - 1][column] > matrix[row][column - 1];
   }
 
   public void moveToPreviousRow() {
@@ -46,9 +43,5 @@ public class LcsMatrixVisitor {
 
   public void moveToNextColumn() {
     column++;
-  }
-
-  public void previousCharacter() {
-    lcsIndex--;
   }
 }

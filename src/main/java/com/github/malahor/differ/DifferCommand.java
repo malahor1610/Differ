@@ -5,11 +5,14 @@ import org.springframework.shell.command.CommandRegistration;
 import org.springframework.shell.command.annotation.Command;
 import org.springframework.shell.command.annotation.Option;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Command
 public class DifferCommand {
 
   @Command(command = "differ", description = "Show differences between two files")
-  public String[] differ(
+  public List<String> differ(
       @Option(
               required = true,
               longNames = "file1",
@@ -26,6 +29,6 @@ public class DifferCommand {
               label = "PATH",
               arity = CommandRegistration.OptionArity.EXACTLY_ONE)
       String file2) {
-    return new LcsMatrix(new String[]{file1}, new String[]{file2}).lcs();
+    return new LcsMatrix(Arrays.asList(file1), Arrays.asList(file2)).diff();
   }
 }
