@@ -61,3 +61,9 @@ Command description:
     --help or -h
     help for differ
     [Optional]
+
+
+Result description:
+
+    Nd e.g. 2d - second line in file1 should be deleted to match content of file2
+    Na e.g. 4a - fourth line in file2 should be added to file1 so that it match content from file2
