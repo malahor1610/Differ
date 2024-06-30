@@ -16,7 +16,7 @@ Differ implements only a basic functionality of the original tool:
 
 ## Requirements
 
-- Java (JDK 17+)
+- Java (+ GraalVM) (JDK 21)
 - Git
 - PowerShell (or other shell program - command execution / path resolving might be different)
 
@@ -67,3 +67,17 @@ Result description:
 
     Nd e.g. 2d - second line in file1 should be deleted to match content of file2
     Na e.g. 4a - fourth line in file2 should be added to file1 so that it match content from file2
+
+## Adjustment
+
+After applying some changes to a project, it can be compiled.
+It is also possible to create a new exe file based on a project. To do this:
+
+Install GraalVM and set up JAVA_HOME pointing to it.
+In a project directory execute command:
+
+```bash
+.\mvnw.cmd native:compile -Pnative -DskipTests
+```
+
+After some time, the exe file should be created inside the target directory. 
